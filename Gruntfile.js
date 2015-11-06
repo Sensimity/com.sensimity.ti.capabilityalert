@@ -7,9 +7,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         clean: {
-            unzip: ['modules'],
-            modules: ['example/modules'],
-            app: ['example/build']
+            unzip: ['modules']
         },
 
         titaniumifier: {
@@ -19,28 +17,16 @@ module.exports = function(grunt) {
             }
         },
 
-        titanium: {
-            ios: {
-                options: {
-                    command: 'build',
-                    logLevel: 'debug',
-                    projectDir: './example',
-                    platform: 'ios'
-                }
-            }
-        },
-
         unzip: {
             module: {
-                src: 'dist/com.sensimity.ti.client-commonjs-<%= pkg.version %>.zip',
-                dest: '../../../'
+                src: 'dist/com.sensimity.ti.capabilityalert-commonjs-<%= pkg.version %>.zip',
+                dest: '../../Koophetlokaal/Koophetlokaal-app/'
             }
         },
 
         watch: {
             js: {
                 files: [
-                    './lib/**/*.js',
                     './index.js'
                 ],
                 tasks: [
@@ -59,9 +45,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-zip');
 
     grunt.registerTask('build', ['titaniumifier:module']);
-    grunt.registerTask('test', ['unzip:module', 'titanium:ios', 'clean:unzip']);
+    grunt.registerTask('test', ['unzip:module', 'clean:unzip']);
 
-    grunt.registerTask('ios', ['clean', 'build', 'test']);
-
-    grunt.registerTask('default', ['ios']);
+    grunt.registerTask('default', ['clean', 'build', 'test']);
 };
