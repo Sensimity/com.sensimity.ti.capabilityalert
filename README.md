@@ -1,4 +1,4 @@
-## com.sensimity.ti.capabilityalert
+# com.sensimity.ti.capabilityalert
 
 This common-js module introduced the possiblity to show a alert and reminds the alert after a day (or the period you prefer).
 
