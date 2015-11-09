@@ -8,7 +8,7 @@ This common-js module introduced the possiblity to show a alert and reminds the 
 ```
 var alertDialog = require('com.sensimity.ti.capabilityalert');
 var onClick = function (e) {
-	console.log('User clicks a button insite the alert dialog');	
+	console.log('User clicks a button inside the alert dialog');	
 };
 alertDialog({
 	title: 'Please update your application',

@@ -16,12 +16,12 @@ function showAlert(params) {
 	var defaultOptions = {
 		key: Ti.App.getId(),
 		tries: 3,
-		okMessage: 'OK',
+		okMessage: 'Ok',
 		cancelMessage: 'No, thank you',
 		remindAfter: 86400
 	};
 
-	var options = _.extend(params, defaultOptions);
+	var options = _.extend(defaultOptions, params);
 	if (!_.isString(options.title)) {
 		Ti.App.warn('[com.sensimity.ti.capabilityalert] Please insert a title, alert can\'t be shown');
 		return;
