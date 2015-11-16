@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         unzip: {
             module: {
                 src: 'dist/com.sensimity.ti.capabilityalert-commonjs-<%= pkg.version %>.zip',
-                dest: '../../Koophetlokaal/Koophetlokaal-app/'
+                dest: '~/Desktop'
             }
         },
 
